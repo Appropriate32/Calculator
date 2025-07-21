@@ -12,31 +12,43 @@ function divide(num1, num2) {
 }
 
 function operate(firstNum, secondNum, operator) {
-    let result;
     if (operator == "+") {
-        result = add(firstNum, secondNum);
+        return add(firstNum, secondNum);
     } else if (operator == "-") {
-        result = subtract(firstNum, secondNum);
+        return subtract(firstNum, secondNum);
     } else if (operator == "*") {
-        result = multiply(firstNum, secondNum);
+        return multiply(firstNum, secondNum);
     } else if (operator == "/") {
-        result = divide(firstNum, secondNum);
+        return divide(firstNum, secondNum);
     }
-    return result;
 };
 
 let firstNum, secondNum, operator;
-let displayNum;
+let shouldResetDisplay = false;
 
 const digit = document.querySelectorAll(".digit");
 const displayText = document.querySelector(".display-text");
+const operatorButton = document.querySelectorAll(".operator");
+const equalButton = document.querySelector(".equal");
 
 digit.forEach((button) => {
     button.addEventListener("click", () => {
+        if (shouldResetDisplay) {
+            displayText.textContent = "";
+            shouldResetDisplay = false;
+        }
         displayText.textContent += button.textContent;
-        displayNum = parseFloat(displayText.textContent);
     })
 })
 
+operatorButton.forEach((button) => {
+    button.addEventListener("click", () => {
+        if (displayText.textContent === "") return;
+        
+        firstNum = parseFloat(displayText.textContent);
+        operator = button.textContent;
+        shouldResetDisplay = true;
+    })
+})
 
 
