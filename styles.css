@@ -54,3 +54,10 @@ h1 {
     text-align: center;
     margin-bottom: 20px;
 }
+
+.warning {
+    margin-top: 3.2rem;
+    color: rgb(255, 0, 0);
+    font-size: 7rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
