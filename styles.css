@@ -9,7 +9,8 @@ body {
 .calc-body {
   display: flex;
   border: solid 1px black;
-  width: 23%;
+  width: 80%;
+  max-width: 380px;
   flex-wrap: wrap;
   gap: 20px;
   align-items: center;
@@ -24,7 +25,7 @@ body {
   padding: 20px;
   font-size: 2rem;
   border-radius: 10px;
-  height: 30px;
+  height: 10%;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -67,4 +68,26 @@ h1 {
   color: rgb(255, 0, 0);
   font-size: 7rem;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+  button {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    font-size: 1.2rem;
+  }
+
+  .display {
+    font-size: 1.4rem;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  .warning {
+    font-size: 3rem;
+    margin-top: 1.5rem;
+  }
 }
